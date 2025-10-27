@@ -25,14 +25,16 @@ set(SERIAL_IO_SOURCE_FILES
         arduino/Print.cpp
 )
 
+message(STATUS "TARGET_BOARD := ${TARGET_BOARD}")
+
 if(${TARGET_BOARD} STREQUAL "mega")
-    list(APPEND SERIAL_IO_FILES
+    list(APPEND SERIAL_IO_SOURCE_FILES
             arduino/HardwareSerial1.cpp
             arduino/HardwareSerial2.cpp
             arduino/HardwareSerial3.cpp
     )
 elseif (${TARGET_BOARD} STREQUAL "micro" OR ${TARGET_BOARD} STREQUAL "leonardo")
-    list(APPEND SERIAL_IO_FILES
+    list(APPEND SERIAL_IO_SOURCE_FILES
             arduino/USBCore.cpp
             arduino/CDC.cpp
             arduino/PluggableUSB.cpp
