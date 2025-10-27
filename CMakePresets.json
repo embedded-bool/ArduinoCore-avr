@@ -1,0 +1,65 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 0,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "NinjaGenerator",
+      "hidden": true,
+      "generator": "Ninja"
+    },
+    {
+      "name": "AvrGnuCompiler",
+      "hidden": true,
+      "toolchainFile": "${sourceDir}/config/toolchain/avr-gcc-toolchain.cmake"
+    },
+    {
+      "name": "ArduinoCoreAPI-UNO",
+      "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
+      "binaryDir": "${sourceDir}/build/arduinoCoreAPI-uno",
+      "cacheVariables": {
+        "BOARD_VARIANT": "UNO",
+        "BOOTLOADER": "optiboot"
+      }
+    },
+    {
+      "name": "ArduinoCoreAPI-Micro",
+      "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
+      "binaryDir": "${sourceDir}/build/arduinoCoreAPI-micro",
+      "cacheVariables": {
+        "BOARD_VARIANT": "UNO",
+        "BOOTLOADER": "optiboot"
+      }
+    },
+    {
+      "name": "ArduinoCoreAPI-Mega",
+      "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
+      "binaryDir": "${sourceDir}/build/arduinoCoreAPI-mega",
+      "cacheVariables": {
+        "BOARD_VARIANT": "MEGA",
+        "BOOTLOADER": "optiboot"
+      }
+    },
+    {
+      "name": "ArduinoCoreAPI-Leonardo",
+      "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
+      "binaryDir": "${sourceDir}/build/arduinoCoreAPI-leo",
+      "cacheVariables": {
+        "BOARD_VARIANT": "LEONARDO",
+        "BOOTLOADER": "optiboot"
+      }
+    },
+    {
+      "name": "OptiBoot-Bootloader",
+      "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
+      "binaryDir": "${sourceDir}/build/optiboot_bootloader",
+      "cacheVariables": {
+        "BOARD_VARIANT": "UNO",
+        "BOOTLOADER": "optiboot"
+      }
+    }
+  ]
+}
