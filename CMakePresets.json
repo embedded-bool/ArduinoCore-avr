@@ -30,7 +30,7 @@
       "inherits": ["NinjaGenerator", "AvrGnuCompiler"],
       "binaryDir": "${sourceDir}/build/arduinoCoreAPI-micro",
       "cacheVariables": {
-        "BOARD_VARIANT": "UNO",
+        "BOARD_VARIANT": "MICRO",
         "BOOTLOADER": "optiboot"
       }
     },
