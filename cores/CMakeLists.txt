@@ -25,7 +25,7 @@ set(SERIAL_IO_SOURCE_FILES
         arduino/Print.cpp
 )
 
-message(STATUS "TARGET_BOARD := ${TARGET_BOARD}")
+message(DEBUG "TARGET_BOARD := ${TARGET_BOARD}")
 
 if(${TARGET_BOARD} STREQUAL "mega")
     list(APPEND SERIAL_IO_SOURCE_FILES

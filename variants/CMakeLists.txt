@@ -3,7 +3,7 @@ function(add_variant_lib NAME)
     set(PIN_HEADER "${DIR_NAME}_pin_header")
 
     set(VARIANT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/${NAME}")
-    message(STATUS "variant directory := ${CMAKE_CURRENT_SOURCE_DIR}/${NAME}")
+    message(DEBUG "variant directory := ${CMAKE_CURRENT_SOURCE_DIR}/${NAME}")
 
     add_library(${PIN_HEADER} INTERFACE)
     target_sources(${PIN_HEADER}
